@@ -9,8 +9,12 @@ use Illuminate\Support\Facades\DB;
 class ProdutoController extends Controller
 {
     
-    public function getAll() {
-        return DB::select('select * from vw_produto_ids');
+    public function getComEan() {
+        return DB::select('select * from vw_produto_ids where ean is not null');
+    }
+
+    public function getSemEan() {
+        return DB::select('select * from vw_produto_ids where ean is null');
     }
 
 }

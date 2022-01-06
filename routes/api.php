@@ -21,3 +21,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('produtos', [ProdutoController::class, 'getAll']);
+
+
+Route::get('/produtos/jsonEan', function () {
+    $products = ProdutoController::getComEan();
+    return json_encode($products);
+});
+
+Route::get('/produtos/jsonSemEan', function () {
+    $products = ProdutoController::getSemEan();
+    return json_encode($products);
+});
