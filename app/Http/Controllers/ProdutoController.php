@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\DB;
 class ProdutoController extends Controller
 {
     
+    public function getAll() {
+        return DB::select('select * from vw_produto_ids order by id_produto asc');
+    }
+    
+    
     public function getComEan() {
         return DB::select('select * from vw_produto_ids where ean is not null');
     }
@@ -18,3 +23,4 @@ class ProdutoController extends Controller
     }
 
 }
+

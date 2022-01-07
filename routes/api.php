@@ -29,6 +29,7 @@ Route::get('/produtos/jsonEan', function () {
 });
 
 Route::get('/produtos/jsonSemEan', function () {
-    $products = ProdutoController::getSemEan();
-    return json_encode($products);
+    $products = ProdutoController::getSemEan()->toJson(JSON_PRETTY_PRINT);
+    return response($products);
 });
+
