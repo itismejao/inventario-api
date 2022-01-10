@@ -10,12 +10,16 @@ class ProdutoController extends Controller
 {
     
     public function getAll() {
-        return DB::select('select * from vw_produto_ids order by id_produto asc');
+        $result = DB::select('select * from vw_produto_ids where rownum < 1000 order by id_produto asc');
+
+        return response()->json($result, 200);
     }
     
     
     public function getComEan() {
-        return DB::select('select * from vw_produto_ids where ean is not null');
+        $result = DB::select('select * from vw_produto_ids where ean is not null');
+        
+        return response()->json($result, 200);
     }
 
     public function getSemEan() {
