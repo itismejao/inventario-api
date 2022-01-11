@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\ContagensController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('produtos', [ProdutoController::class, 'getAllProducts']);
 
 Route::get('/produtos/{init}/{end}', [ProdutoController::class, 'getProductPagination']);
+
+Route::post('add', [ContagensController::class, 'salvarContagem']);
