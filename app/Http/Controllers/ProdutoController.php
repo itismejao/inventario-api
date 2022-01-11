@@ -16,9 +16,10 @@ class ProdutoController extends Controller
     }
 
     public function getProductPagination($init, $end) {
-        $result = DB::select("select id_produto, ean, nome from (select m.*, rownum r from vw_produto_ids m)
-            where r >= {$init} and r <= {$end} 
-            order by id_produto desc");
+        $result = DB::select("select tabela.id_produto, tabela.ean, tabela.nome 
+        from (select m.*, rownum r from vw_produto_ids m) tabela
+        where tabela.r >= {$init} and tabela.r <= {$end} 
+        order by tabela.id_produto desc");
     
         return response()->json($result, 200);
     }
