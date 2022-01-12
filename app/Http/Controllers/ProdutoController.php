@@ -20,7 +20,7 @@ class ProdutoController extends Controller
         from (select tabela.*, rownum r
         from (select m.* from vw_produto_ids m order by m.id_produto asc) tabela
         order by tabela.id_produto asc) tabela2
-        where tabela2.r >= ${$init} and tabela2.r <= ${$end}
+        where tabela2.r >= {$init} and tabela2.r <= {$end}
         order by tabela2.id_produto desc");
     
         return response()->json($result, 200);
