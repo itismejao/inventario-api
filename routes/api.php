@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('produtos', [ProdutoController::class, 'getAllProducts']);
+Route::get('qtdprodutos', [ProdutoController::class, 'getQtd']);
 
 Route::get('/produtos/{init}/{end}', [ProdutoController::class, 'getProductPagination']);
 

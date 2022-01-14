@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\DB;
 class ProdutoController extends Controller
 {
     
-    public function getAllProducts() {
-        $result = DB::select('select * from vw_produto_ids where rownum < 10000 order by id_produto asc');
+    public function getQtd() {
+        $result = DB::select('select count(*) as total_produtos from vw_produto_ids');
 
         return response()->json($result, 200);
     }
