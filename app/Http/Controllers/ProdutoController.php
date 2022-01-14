@@ -10,7 +10,7 @@ class ProdutoController extends Controller
 {
     
     public function getQtd() {
-        $result = DB::select('select count(*) as total_produtos from vw_produto_ids');
+        $result = DB::select('select count(*) as total_produtos from vw_produto_ids where rownum <= 6200');
 
         return response()->json($result, 200);
     }
