@@ -28,3 +28,5 @@ Route::get('/produtos/{init}/{end}', [ProdutoController::class, 'getProductPagin
 Route::post('add', [ContagensController::class, 'salvarContagem']);
 
 Route::get('pendentes/{filial}', [ContagensController::class, 'getContagensPendentes']);
+
+Route::get('produtos/pendentes/{filial}', [ContagensController::class, 'getProdutosContagemPendente']);
