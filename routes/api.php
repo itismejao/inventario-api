@@ -26,3 +26,5 @@ Route::get('qtdprodutos', [ProdutoController::class, 'getQtd']);
 Route::get('/produtos/{init}/{end}', [ProdutoController::class, 'getProductPagination']);
 
 Route::post('add', [ContagensController::class, 'salvarContagem']);
+
+Route::get('pendentes/{filial}', [ProdutoController::class, 'getContagensPendentes']);

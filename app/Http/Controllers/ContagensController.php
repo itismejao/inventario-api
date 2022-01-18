@@ -32,6 +32,15 @@ class ContagensController extends Controller
         }
     
     }
+
+    public function getContagensPendentes($filial) {
+        $result = DB::select("select c.id_filial, i.id_inventario_cic, i.id_produto, i.ordem_contagem, i.data_lancto 
+                    from inventario_cic_contagem i inner join inventario_cic c on i.id_inventario_cic = c.id_inventario_cic 
+                    where c.id_filial = {$filial} and i.ordem_contagem > 1 and i.situacao in (1,2) and c.situacao in (1,2)  order by i.id_inventario_cic desc");
+    
+        return response()->json($result, 200);
+    }
+
     
 }
 
