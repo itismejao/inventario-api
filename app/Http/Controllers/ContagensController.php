@@ -46,8 +46,9 @@ class ContagensController extends Controller
     public function getProdutosContagemPendente($filial, $id_cic) {
         $result = DB::select("select i.id_produto, i.id_inventario_cic
                              from inventario_cic_contagem i inner join inventario_cic c on i.id_inventario_cic = c.id_inventario_cic 
+                                  inner join vw_produto_ids pi on i.id_produto = pi.id_produto
                              where c.id_filial = {$filial} and i.ordem_contagem > 1 and i.situacao in (1,2) and c.situacao in (1,2) and i.id_inventario_cic = {$id_cic}
-                             order by i.id_inventario_cic desc");
+                             order by pi.nome asc");
     
         return response()->json($result, 200);
     }
