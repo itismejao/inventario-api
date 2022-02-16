@@ -24,6 +24,7 @@
 
             a {
                 color: white;
+                font-family: 'Nunito', sans-serif;
             }
 
             .info {
@@ -31,16 +32,20 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .info h3 {
+                font-family: 'Nunito', sans-serif;
+            }
         </style>   
 
     </head>
     <body class="padrao">
         <div class="imagem">
-            <img src="../assets/Logo_inventario.png"></img>
+            <img src="{{ asset('../assets/Logo_inventario.png') }}"></img>
         </div>
         <div class="info">
             <h3>Aplicativo InventarioNM.com</h3>
-            <a href="../assets/inventario.apk">Baixe aqui</a>
+            <a href="{{ asset('../assets/inventario.apk') }}">Baixe aqui</a>
         </div>
     
     </body>
