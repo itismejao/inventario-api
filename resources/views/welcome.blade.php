@@ -41,11 +41,11 @@
     </head>
     <body class="padrao">
         <div class="imagem">
-            <img src="{{ asset('../assets/Logo_inventario.png') }}"></img>
+            <img src="/assets/Logo_inventario.png"></img>
         </div>
         <div class="info">
             <h3>Aplicativo InventarioNM.com</h3>
-            <a href="{{ asset('../assets/inventario.apk') }}">Baixe aqui</a>
+            <a href="/assets/inventario.apk">Baixe aqui</a>
         </div>
     
     </body>
