@@ -30,3 +30,7 @@ Route::post('add', [ContagensController::class, 'salvarContagem']);
 Route::get('pendentes/{filial}', [ContagensController::class, 'getContagensPendentes']);
 
 Route::get('produtos/pendentes/{filial}/{id_cic}', [ContagensController::class, 'getProdutosContagemPendente']);
+
+
+
+Route::get('versaoapp', [ContagensController::class, 'getVersaoApp']);
