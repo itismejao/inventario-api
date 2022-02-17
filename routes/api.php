@@ -31,6 +31,13 @@ Route::get('pendentes/{filial}', [ContagensController::class, 'getContagensPende
 
 Route::get('produtos/pendentes/{filial}/{id_cic}', [ContagensController::class, 'getProdutosContagemPendente']);
 
-
-
 Route::get('versaoapp', [ContagensController::class, 'getVersaoApp']);
+
+
+
+
+Route::get('getvwproduto', [ContagensController::class, 'getVwProduto']);
+Route::get('getinvcicafrot', [ContagensController::class, 'getInvCicAfrot']);
+Route::get('getinvciccont', [ContagensController::class, 'getInvCicCont']);
+Route::get('getinvcic', [ContagensController::class, 'getInvCic']);
+Route::get('getdepart', [ContagensController::class, 'getDepart']);
