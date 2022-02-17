@@ -60,40 +60,5 @@ class ContagensController extends Controller
         return response()->json($result, 200);
     }
 
-
-
-
-    
-    
-    public function getVwProduto() {
-        $result = DB::select("select * from vw_produto_ids where rownum < 2");
-    
-        return response()->json($result, 200);
-    }
-
-    public function getInvCicAfrot() {
-        $result = DB::select("select * from inventario_cic_imp_afrot where rownum < 2");
-    
-        return response()->json($result, 200);
-    }
-
-    public function getInvCicCont() {
-        $result = DB::select("select * from inventario_cic_contagem where rownum < 2");
-    
-        return response()->json($result, 200);
-    }
-
-    public function getInvCic() {
-        $result = DB::select("select * from inventario_cic where rownum < 2");
-    
-        return response()->json($result, 200);
-    }
-
-    public function getDepart() {
-        $result = DB::select("select * from departamento where rownum < 2");
-    
-        return response()->json($result, 200);
-    }
-    
 }
 
