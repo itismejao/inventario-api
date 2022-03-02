@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Inventário NM</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -43,15 +43,24 @@
                     align-items: center;
                     margin-top: 50px;
                 }
+              
+                .ambiente {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  color: red;
+                  margin-top: 10px;
+                }
         </style>   
 
     </head>
     <body class="padrao">
+        <h1 class="ambiente">HOMOLOGAÇÃO</h1>
         <div class="imagem">
             <img src="/assets/Logo_inventario.png"></img>
         </div>
         <div class="info">
-            <h3>Aplicativo InventarioNM.com V1.1.0</h3>
+            <h3>Aplicativo InventarioNM.com V1.1.1</h3>
             <a href="/assets/inventario_nm.apk">Baixe o app aqui</a>
         </div>
         <div class="manual">
