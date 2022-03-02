@@ -41,7 +41,7 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    margin-top: 50px;
+                    margin-top: 30px;
                 }
               
                 .ambiente {
@@ -49,7 +49,7 @@
                   flex-direction: column;
                   align-items: center;
                   color: red;
-                  margin-top: 10px;
+                  margin-top: 20px;
                 }
         </style>   
 
