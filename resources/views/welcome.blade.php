@@ -60,7 +60,7 @@
             <img src="/assets/Logo_inventario.png"></img>
         </div>
         <div class="info">
-            <h3>Aplicativo InventarioNM.com V1.1.1</h3>
+            <h3>Aplicativo InventarioNM.com V1.1.2</h3>
             <a href="/assets/inventario_nm.apk">Baixe o app aqui</a>
         </div>
         <div class="manual">
