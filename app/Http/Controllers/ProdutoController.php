@@ -16,7 +16,7 @@ class ProdutoController extends Controller
     }
 
     public function getProductPagination($init, $end) {
-        $result = DB::select("select tabela2.id_produto, tabela2.ean, tabela2.nome
+        $result = DB::select("select tabela2.id_produto, tabela2.cod_barra, tabela2.resumida
                               from (select tabela.*, rownum r
                                     from (select m.* from produto m order by m.id_produto desc) tabela
                                     order by tabela.id_produto desc) tabela2
