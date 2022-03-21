@@ -20,8 +20,8 @@ class ContagensController extends Controller
     
             foreach($data as $key){
                 DB::insert('insert into inventario_cic_imp_afrot 
-                    (id_filial, id_funcionario, id_agrupador, data_cria_agrupador, data_inicia_agrupador, data_termino_agrupador, id_item_inventario, id_produto, ean, id_unico, quantidade, status, aplicacao, local) 
-                    values (?,?,?,sysdate,sysdate,sysdate,?,?,?,?,?,?,?,?)', 
+                            (id_filial, id_funcionario, id_agrupador, data_cria_agrupador, data_inicia_agrupador, data_termino_agrupador, id_item_inventario, id_produto, ean, id_unico, quantidade, status, aplicacao, local) 
+                            values (?,?,?,sysdate,sysdate,sysdate,?,?,?,?,?,?,?,?)', 
                             [$id_filial,$id_funcionario,$id_agrupador,null,$key['id_produto'],$key['ean'],null,$key['quantidade'],1,2,$key['tipo_local']]);
             }
     
@@ -36,7 +36,7 @@ class ContagensController extends Controller
     public function getContagensPendentes($filial) {
         $result = DB::select("select distinct c.id_filial, c.data_cria, i.id_inventario_cic, c.observacao, d.denominacao
                              from inventario_cic_contagem i inner join inventario_cic c on i.id_inventario_cic = c.id_inventario_cic 
-                                 inner join departamento d on c.id_departamento = d.id_departamento
+                                  inner join departamento d on c.id_departamento = d.id_departamento
                              where c.id_filial = {$filial} and i.ordem_contagem > 1 and i.situacao in (1,2) and c.situacao in (1,2)
                              order by i.id_inventario_cic desc");
                         
@@ -47,7 +47,7 @@ class ContagensController extends Controller
     public function getProdutosContagemPendente($filial, $id_cic) {
         $result = DB::select("select i.id_produto, i.id_inventario_cic
                              from inventario_cic_contagem i inner join inventario_cic c on i.id_inventario_cic = c.id_inventario_cic 
-                                  inner join vw_produto_ids pi on i.id_produto = pi.id_produto
+                                  inner join produto pi on i.id_produto = pi.id_produto
                              where c.id_filial = {$filial} and i.ordem_contagem > 1 and i.situacao in (1,2) and c.situacao in (1,2) and i.id_inventario_cic = {$id_cic}
                              order by pi.nome asc");
     
