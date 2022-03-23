@@ -49,7 +49,7 @@ class ContagensController extends Controller
                              from inventario_cic_contagem i inner join inventario_cic c on i.id_inventario_cic = c.id_inventario_cic 
                                   inner join produto pi on i.id_produto = pi.id_produto
                              where c.id_filial = {$filial} and i.ordem_contagem > 1 and i.situacao in (1,2) and c.situacao in (1,2) and i.id_inventario_cic = {$id_cic}
-                             order by pi.nome asc");
+                             order by pi.resumida asc");
     
         return response()->json($result, 200);
     }
