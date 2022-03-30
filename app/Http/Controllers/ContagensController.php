@@ -55,7 +55,7 @@ class ContagensController extends Controller
     }
 
     public function getVersaoApp() {
-        $result = ['versao' => '1.1.3'];
+        $result = ['versao' => '1.1.4'];
 
         return response()->json($result, 200);
     }
